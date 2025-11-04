@@ -1,0 +1,112 @@
+
+BINARY SEARCH TREES (BST)
+
+
+BST is a special kind of binary tree where each node follows the property:
+- Left child < Parent node  
+- Right child > Parent node  
+
+
+can be implemented in two ways:
+1. using arrays
+2. using linked lists
+
+
+Implementation using arrays:
+
+    when we start the indexing of array with 0:
+
+        array: [ 5 | 3 | 7 | 1 | 4 | 8 ]
+        index: [ 0 | 1 | 2 | 3 | 4 | 5 ]
+
+        - Root Position: i = 0
+        - Left Child Position: 2i + 1
+        - Right Child Position: 2i + 2 
+
+    when we start the indexing of array with 1:
+
+        array: [ 5 | 3 | 7 | 1 | 4 | 8 ]
+        index: [ 1 | 2 | 3 | 4 | 5 | 6 ]
+
+        - Root Position: i = 1
+        - Left Child Position: 2i
+        - Right Child Position: 2i + 1 
+
+
+Implementation using linked list:
+
+    each node has its own info along with the links to left child and right child
+
+    struct Node {
+        int data;
+        struct Node* left;
+        struct Node* right;
+    };
+
+
+some quick points:
+- when inserting a new key into a BST: it always becomes a leaf node
+- inorder traversal of a BST is always sorted
+- BSTs are not self-balancing
+- they are great for dynamic data
+
+Algorithm for insertion:
+
+    insert(root, key) 
+    {
+        if (root == NULL)
+            create a new node with data = key
+            return new node
+        
+        // to insert in left sub tree
+        if key < root->data:
+            root->left = insert(root->left, key)
+        
+        // to insert in right sub tree
+        else if key > root->data:
+            root->right = insert(root->right, key)
+        
+        return root
+    }
+
+Algorithm for deletion:
+
+    delete(root, key) 
+    {
+        if (root == NULL)
+            return root
+        
+        // searching for the node
+        if key < root->data:
+            root->left = delete(root->left, key)
+        else if key > root->data:
+            root->right = delete(root->right, key)
+        
+        else:
+            // node found ==> key == root->data
+            
+            // Case 1: no children (leaf node)
+            if root->left == NULL and root->right == NULL:
+                free(root)
+                return NULL
+            
+            // Case 2: one child
+            else if root->left == NULL: // has right child
+                temp = root->right
+                free(root)
+                return temp
+            else if root->right == NULL: // has left child
+                temp = root->left
+                free(root)
+                return temp
+            
+            // Case 3: two children
+            else:
+                // find inorder successor (smallest in right subtree) 
+                // inorder predecessor (largest in left subtree) can also be used
+                temp = findMin(root->right)
+                root->data = temp->data
+                root->right = delete(root->right, temp->data)
+        
+        return root
+    }
