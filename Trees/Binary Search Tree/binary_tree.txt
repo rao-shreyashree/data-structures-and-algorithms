@@ -1,0 +1,63 @@
+
+BINARY TREE - notes
+
+It is a tree data structure in which: 
+    each node has at most two children 
+    these children are usually called
+    ' Left child
+    ' Right child
+
+Each node in a binary tree usually has:
+    Data – the value stored in the node
+    Pointer to left child – points to left subtree
+    Pointer to right child – points to right subtree
+
+struct Node {
+    int data;
+    struct Node* left;
+    struct Node* right;
+};
+
+Types of Binary Trees
+1. Full Binary Tree: Every node has either 0 or 2 children 
+2. Complete Binary Tree: All levels are completely filled except possibly the last, which is filled from left to right
+3. Perfect Binary Tree: All internal nodes have 2 children, and all leaves are at the same level
+4. Degenerate / Pathological Tree: Each parent has only one child (like a linked list)
+
+Traversal in trees: visiting all nodes exactly once
+each traversal can be done in two ways: iterative or recursive
+    inorder sequence: Left → Root → Right
+    preorder sequence: Root → Left → Right
+    postorder sequence: Left → Right → Root
+
+Algorithm for recursive traversals:
+
+1. inorder:
+
+inorder_traversal(root) {
+    if (root == NULL)
+        return;
+    inorder(root->left);
+    print(root->data);
+    inorder(root->right);
+}
+
+2. preorder: 
+
+preorder_traversal(root) {
+    if (root == NULL)
+        return;
+    print(root->data);
+    preorder(root->left);
+    preorder(root->right);
+}
+
+3. postorder:
+
+postorder_raversal(root) {
+    if (root == NULL)
+        return
+    postorder(root->left);
+    postorder(root->right);
+    print(root->data);
+}
