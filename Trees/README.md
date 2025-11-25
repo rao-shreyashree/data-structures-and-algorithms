@@ -12,15 +12,19 @@ This folder contains implementations of various **Tree Data Structures** in C.
 
 ---
 
-## Types of Trees Implemented
-- **Binary Tree** – each node has at most two children
-- **Binary Search Tree (BST)** – special case of binary tree
-- **AVL Tree** – self-balancing binary tree
-- **Expression Tree** – used in implementing mathematical expressions.
+## Types of trees
+- **Binary Tree** - each node has at most two children
+  - **Binary Search Tree (BST)** - special case of binary tree
+  - **Expression Tree** - used in implementing mathematical expressions
+- **Balanced trees**
+  - **AVL Tree** - self-balancing BST
+  - **Splay Tree** - self-adjusting BST
+  - **Heap Tree** - complete binary tree
+- **Trie Tree** - nodes can have many children
 
 ---
 
-## Operations performed
+## Common tree operations
 - **Insertion** – adding new nodes to the tree
 - **Deletion** – removing nodes while maintaining the overall structure  
 - **Search** – to locate for an element  
