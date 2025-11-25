@@ -9,14 +9,14 @@ A **Binary Search Tree** is a special kind of binary tree where each node follow
 - Left child < Parent   
 - Right child > Parent   
 
-This property makes the operations like searching, insertion, and deletion efficient — with an average time complexity of **O(log n)**
+This property makes the operations like searching, insertion, and deletion efficient - with an average time complexity of **O(log n)**
 
 ---
 
 ## Traversals
-- **Inorder Traversal**  
-- **Preorder Traversal**  
-- **Postorder Traversal**
+- **Inorder Traversal** - left -> root -> right
+- **Preorder Traversal** - root -> left -> right
+- **Postorder Traversal** - left -> right -> root
 
 ---
 
