@@ -1,6 +1,14 @@
 # Binary Search Tree (BST)
 
 This folder contains implementation of **Binary Search Tree (BST)**
+## Contents
+
+| File | Description |
+|--------------|-------------|
+| `binary_tree.txt` | quick notes on general tree concepts (definition, properties, types) |
+| `binary_search_tree.txt` | quick notes specific to Binary Search Trees (traversals, implementation using array and linked list) |
+| `common_operations.md` | algorithms and functions for common BST operations (insert, delete, traversals, search, height) |
+| `*.c` files | implementations of iterative and recursive versions of BST operations |
 
 ---
 
@@ -21,8 +29,19 @@ This property makes the operations like searching, insertion, and deletion effic
 ---
 
 ## Complexity
-| operation | average Case | worst case |
+| operation | average case | worst case |
 |------------|---------------|------------|
 | Insertion  | O(log n) | O(n) |
 | Deletion   | O(log n) | O(n) |
 | Search     | O(log n) | O(n) |
+
+---
+
+## How to Use
+
+Navigate and compile any `.c` implementation file:
+
+```bash
+gcc file_name.c -o file
+file
+```
