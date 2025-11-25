@@ -6,7 +6,7 @@ This folder contains implementation of **Expression tree** in C.
 
 | File | Description |
 |--------------|-------------|
-| `expression_tree.txt` | quick notes (algorithm, example, implementation using stack and linked list) |
+| `expression_tree.md` | quick notes (algorithm, example, implementation using stack and linked list) |
 | `*.c` files | implementations of iterative and recursive versions of BST operations |
 
 ---
